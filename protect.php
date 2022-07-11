@@ -4,6 +4,6 @@
     }
 
     if(!isset($_SESSION['id'])) {
-        die("Faça login para acessar está página. <a href='index.php'>Login</a>");
+        header("Location: index.php");
     }
 ?>
