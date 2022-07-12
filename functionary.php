@@ -4,9 +4,9 @@
 
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM usuarios WHERE id LIKE '%$data%' or name LIKE '%$data%' or user LIKE '%$data%' ORDER BY id DESC";
+        $sql = "SELECT * FROM desktop WHERE id LIKE '%$data%' or nome LIKE '%$data%' or sobrenome LIKE '%$data%' ORDER BY id DESC";
     } else {
-        $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+        $sql = "SELECT * FROM desktop ORDER BY id DESC";
     }
     
     $result = $mysqli -> query($sql);
@@ -18,13 +18,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>Cadastrar</title>
 </head>
 <body>
 
-    <h1>System Users</h1>
+    <h1>Cadatrar</h1>
 
-    <a href="create.php">Criar novo usuário</a>
+    <a href="cadastre.php">Criar novo usuário</a>
     <br>
     <br>
     
@@ -38,10 +38,13 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>User</th>
-                <th>Password</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>RG</th>
+                <th>Cargo</th>
+                <th>Gestor</th>
+                <th>Registro</th>
                 <th>...</th>
             </tr>
         </thead>
@@ -50,10 +53,13 @@
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
                     echo "<tr>";
-                    echo "<td>" . $user_data["id"] . "</td>";
-                    echo "<td>" . $user_data["name"] . "</td>";
-                    echo "<td>" . $user_data["user"] . "</td>";
-                    echo "<td>" . $user_data["password"] . "</td>";
+                    echo "<td>" . $user_data["nome"] . " " . $user_data["sobrenome"] . "</td>";
+                    echo "<td>" . $user_data["data_nascimento"] . "</td>";
+                    echo "<td>" . $user_data["cpf"] . "</td>";
+                    echo "<td>" . $user_data["rg"] . "</td>";
+                    echo "<td>" . $user_data["cargo"] . "</td>";
+                    echo "<td>" . $user_data["gestor"] . "</td>";
+                    echo "<td>" . "xxx" . "</td>";
                     echo "<td>" . "<a href='edit.php?id=$user_data[id]'>editar</a>" . "</td>";
                     echo "<td>" . "<a href='delete.php?id=$user_data[id]'>deletar</a>" . "</td>";
                     echo "</tr>";
@@ -75,11 +81,11 @@
         })
 
         function searchData() {
-            window.location = 'user.php?search=' + search.value
+            window.location = 'functionary.php?search=' + search.value
         }
 
         function searchClearData() {
-            window.location = 'user.php'
+            window.location = 'functionary.php'
         }
     </script>
 </body>
