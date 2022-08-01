@@ -1,4 +1,5 @@
 <?php 
+    include('navigation.php');
     include('connection.php');
     include('protect.php');
 
@@ -15,25 +16,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+
+    <!-- Title Page -->
+    <title>Functionary</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/programmer.png" type="image/x-icon">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/functionary.css">
+    
 </head>
 <body>
 
-    <h1>Cadatrar</h1>
+    <main>
+        <h1>Functionary's</h1>
 
-    <a href="cadastre.php">Criar novo usuário</a>
-    <br>
-    <br>
-    
-    <input type="search" name="search" id="search" placeholder="search">
-    <button onclick="searchData()">Pesquisar</button>
-    <button onclick="searchClearData()">Limpar</button>
+        <section class="menu">
+            <article>
+                <span class="icon-add" style="--color:#ffa117">
+                    <a href="cadastre.php">
+                        <span>
+                            <ion-icon name="person-add-outline"></ion-icon>
+                        </span>
+                        <!-- <span class="action">
+                            Register new user functionary
+                        </span> -->
+                    </a>
+                </span>
+            </article>
 
-    <br>
-    <br>
+            <article>
+
+                <span class="icon-add" style="--color:#FF2a07" id="reset">
+                    <span onclick="searchClearData()">
+                    <!-- <span onSubmit={this.handleSubmit}> -->
+                        <ion-icon name="refresh-outline"></ion-icon>
+                    </span>
+                </span>
+
+                <input type="search" name="search" id="search" placeholder="search">
+                
+                <span class="icon-add" style="--color:#0fa937">
+                    <span onclick="searchData()">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </span>
+                </span>
+
+            </article>
+        </section>
+
+    </main>
+
     
     <table>
         <thead>
@@ -56,7 +91,6 @@
                     echo "<td>" . $user_data["nome"] . " " . $user_data["sobrenome"] . "</td>";
                     echo "<td>" . $user_data["data_nascimento"] . "</td>";
                     echo "<td>" . $user_data["cpf"] . "</td>";
-                    echo "<td>" . $user_data["rg"] . "</td>";
                     echo "<td>" . $user_data["cargo"] . "</td>";
                     echo "<td>" . $user_data["gestor"] . "</td>";
                     echo "<td>" . "xxx" . "</td>";
@@ -69,24 +103,10 @@
         </tbody>
     </table>
 
-    <a href="painel.php">painel</a>
+    <!-- SCRIPTS -->
 
-    <script>
-        var search = document.getElementById('search')
+    <!-- Navigation -->
+    <script src="javascript/buttonFunctionary.js"></script>
 
-        search.addEventListener("keydown", (event) => {
-            if(event.key === "Enter") {
-                searchData()
-            }
-        })
-
-        function searchData() {
-            window.location = 'functionary.php?search=' + search.value
-        }
-
-        function searchClearData() {
-            window.location = 'functionary.php'
-        }
-    </script>
 </body>
 </html>

@@ -10,12 +10,12 @@
         $sobrenome = $_POST['sobrenome'];
         $data_nascimento = $_POST['data_nascimento'];
         $cpf = $_POST['cpf'];
-        $rg = $_POST['rg'];
         $cargo = $_POST['cargo'];
         $gestor = $_POST['gestor'];
         // $registro = $_POST['registro'];
     
-        $result = mysqli_query($mysqli, "INSERT INTO desktop(nome, sobrenome, data_nascimento, cpf, rg, cargo, gestor) VALUES ('$nome', '$sobrenome', '$data_nascimento', '$cpf', '$rg', '$cargo', '$gestor')");
+        $result = mysqli_query($mysqli, "INSERT INTO desktop(nome, sobrenome, data_nascimento, cpf, cargo, gestor) 
+                                            VALUES ('$nome', '$sobrenome', '$data_nascimento', '$cpf', '$cargo', '$gestor')");
 
         header('Location: functionary.php');
     }
@@ -25,9 +25,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre User</title>
 </head>
 <body>

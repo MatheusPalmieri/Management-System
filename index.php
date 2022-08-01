@@ -25,7 +25,7 @@
 
                 $_SESSION['id'] = $user['id'];
 
-                header("Location: painel.php");
+                header("Location: dashboard.php");
             } else {
                 echo "Falha ao logar! E-mail ou senha incorretos.";
             }
