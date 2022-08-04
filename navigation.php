@@ -34,7 +34,8 @@
         <li class="list-item" style="--color:#ffa117">
           <a href="functionary.php">
             <span class="icon">
-              <ion-icon name="person-add-outline"></ion-icon>
+              <ion-icon name="people-outline"></ion-icon>
+              <!-- <ion-icon name="person-add-outline"></ion-icon> -->
             </span>
             <span class="text">Functionary</span>
           </a>

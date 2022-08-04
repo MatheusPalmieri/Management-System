@@ -5,9 +5,9 @@
 
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM usuarios WHERE id LIKE '%$data%' or name LIKE '%$data%' or user LIKE '%$data%' ORDER BY id DESC";
+        $sql = "SELECT * FROM user WHERE id LIKE '%$data%' or name LIKE '%$data%' or user LIKE '%$data%' ORDER BY id DESC";
     } else {
-        $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+        $sql = "SELECT * FROM user ORDER BY id DESC";
     }
     
     $result = $mysqli -> query($sql);
@@ -18,29 +18,49 @@
 <head>
     
     <!-- Title Page -->
-    <title>User</title>
+    <title>System User</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/programmer.png" type="image/x-icon">
 
     <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/functionary.css">
   
 </head>
 <body>
 
-    <h1>System Users</h1>
+<main>
+    <h1>System User</h1>
 
-    <a href="create.php">Criar novo usuário</a>
-    <br>
-    <br>
-    
-    <input type="search" name="search" id="search" placeholder="search">
-    <button onclick="searchData()">Pesquisar</button>
-    <button onclick="searchClearData()">Limpar</button>
+    <section class="menu">
+        <article>
+            <a href="cadastre.php">
+                <span class="icon-add" style="--color:#ffa117">
+                    <span>
+                        <ion-icon name="person-add-outline"></ion-icon>
+                    </span>
+                    <!-- <span class="action">
+                        Register new user functionary
+                    </span> -->
+                </span>
+            </a>
+        </article>
 
-    <br>
-    <br>
+        <article>
+
+            <span class="icon-add" style="--color:#FF2a07" id="reset" onclick="searchClearData()">
+                <ion-icon name="refresh-outline"></ion-icon>
+            </span>
+
+            <input type="search" name="search" id="search" placeholder="search">
+            
+            <span class="icon-add" style="--color:#0fa937" onclick="searchData()">
+                <ion-icon name="search-outline"></ion-icon>
+            </span>
+
+        </article>
+    </section>
     
     <table>
         <thead>
@@ -70,22 +90,10 @@
         </tbody>
     </table>
 
-    <script>
-        var search = document.getElementById('search')
+</main>
+    <!-- SCRIPTS -->
 
-        search.addEventListener("keydown", (event) => {
-            if(event.key === "Enter") {
-                searchData()
-            }
-        })
+    <script src="javascript/buttonFunctionary.js"></script>
 
-        function searchData() {
-            window.location = 'user.php?search=' + search.value
-        }
-
-        function searchClearData() {
-            window.location = 'user.php'
-        }
-    </script>
 </body>
 </html>

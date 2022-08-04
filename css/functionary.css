@@ -1,7 +1,7 @@
 .menu {
     display: flex;
     justify-content: space-between;
-    margin-top: 12px;
+    margin: 12px 0 24px;
 }
 
 .icon-add {
@@ -15,6 +15,8 @@
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
+    transition: .3s;
 }
 
 .icon-add::before {
@@ -35,17 +37,38 @@
     opacity: 0.3;
 }
 
-.icon-add a {
-    text-decoration: none;
-    color: #fff;
+.icon-action:first-child {
+    margin-right: 10px;
+}
+
+td:last-child {
+    display: flex;
+    margin: 0;
+    padding-right: 0;
 }
 
 .action {
+    margin-left: 8px;
     display: none;
+    opacity: 0;
+    overflow: none;
+    transform: translateX(-100px);
+    transition: 1s translateX;
 }
 
-.icon-add:hover .action {
-    display: flex;
+.register {
+    transition: .7s;
+    overflow: hidden;
+}
+
+.register:hover .action {
+    opacity: 1;
+    transform: translateX(0px);
+    display: block;
+}
+
+.register:hover{
+    width: 100px;
 }
 
 #reset {
@@ -79,3 +102,58 @@ input:focus {
     border-bottom: 2px solid #fff;
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+    border-radius: 4px;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+th,
+td 
+{
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #fff;
+}
+
+th:first-child,
+th:last-child,
+td:first-child,
+td:last-child
+{
+    text-align: center;
+}
+
+th {
+	text-align: left;
+}
+
+
+th {
+	background-color: #3d4152;
+}
+
+.destaque {
+    background-color: #535664;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+td:hover {
+    position: relative;
+}
+
+td:hover td::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}

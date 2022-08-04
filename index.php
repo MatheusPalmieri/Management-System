@@ -11,7 +11,7 @@
             $user = $mysqli -> real_escape_string($_POST['user']);
             $password = $mysqli -> real_escape_string($_POST['password']);
 
-            $sql_code = "SELECT * FROM usuarios WHERE user = '$user' AND password = '$password'";
+            $sql_code = "SELECT * FROM user WHERE user = '$user' AND password = '$password'";
             $slq_query = $mysqli -> query($sql_code) or die("Falha na execução do código SQL: " . $mysqli -> error);
 
             $quantity = $slq_query -> num_rows;

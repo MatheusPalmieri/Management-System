@@ -9,7 +9,7 @@
         $user = $_POST['user'];
         $password = $_POST['password'];
 
-        $sqlUpdate = "UPDATE usuarios SET name='$name', user='$user', password='$password' WHERE id='$id'";
+        $sqlUpdate = "UPDATE user SET name='$name', user='$user', password='$password' WHERE id='$id'";
 
         $result = $mysqli -> query($sqlUpdate);
     }

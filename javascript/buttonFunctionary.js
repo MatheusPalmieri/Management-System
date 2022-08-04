@@ -1,8 +1,18 @@
 'use strict';
 
-var resetURL = window.location.href.replace('http://localhost/development/User-Management/', '')
+var resetURL = window.location.href.replace('http://localhost/php/User-Management/', '')
 var resetButton = document.getElementById('reset')
 var search = document.getElementById('search')
+
+if(resetURL === 'functionary.php' || resetURL === 'functionary.php?search=' + search.value){
+    if(resetURL !== 'functionary.php' || resetURL === 'functionary.php?search='){
+        resetSearch()
+    }
+} else if (resetURL !== 'user.php' || resetURL === 'user.php?search=') {
+    resetSearch()
+} else {
+        resetButton.style = 'display: none;'
+}
 
 search.addEventListener("keydown", (event) => {
     if(event.key === "Enter") {
@@ -11,15 +21,24 @@ search.addEventListener("keydown", (event) => {
 })
 
 function searchData() {
-    window.location = 'functionary.php?search=' + search.value
+    if(window.location = 'functionary.php') {
+        window.location = 'functionary.php?search=' + search.value
+    } else {
+        window.location = 'user.php?search=' + search.value
+    }
 }
 
-console.log(resetURL)
-
-if(resetURL !== 'functionary.php' && resetURL !== 'functionary.php?search=') {
-    resetButton.style = 'display: flex;';
+function resetSearch() {
+    resetButton.style = 'display: flex;'
 }
 
 function searchClearData() {
-    window.location = 'functionary.php'
+    console.log(window.location)
+    if(window.location = 'functionary.php?search=') {
+        window.location = 'functionary.php'
+    } else {
+        window.location = 'user.php'
+    }
+    // window.location = 'functionary.php'
+    // window.location = 'user.php'
 }
