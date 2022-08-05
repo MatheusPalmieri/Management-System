@@ -25,6 +25,7 @@
 
     <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/functionary.css">
 
     
@@ -36,7 +37,7 @@
 
         <section class="menu">
             <article>
-                <a href="cadastre.php">
+                <a href="functionaryRegister.php">
                     <span class="icon-add register" style="--color:#ffa117">
                         <ion-icon name="person-add-outline"></ion-icon>
                         <p class="action">
@@ -84,16 +85,15 @@
                             echo "<td>" . $user_data["gestor"] . "</td>";
                             echo "<td>" . $user_data["data_nascimento"] . "</td>";
                             echo "<td>" . $user_data["cpf"] . "</td>";
-                            echo "<td>" . "<a href='edit.php?id=$user_data[id]'>
+                            echo "<td>" . "<a href='functionaryEdit.php?id=$user_data[id]'>
                                                 <span class='icon-action icon-add' style='--color:#3d4152'><ion-icon name='pencil-outline'></ion-icon></span>
                                             </a>" 
-                                        . "<a href='delete.php?id=$user_data[id]'>
+                                        . "<a onClick='confirmDelete()' href='functionaryDelete.php?id=$user_data[id]'>
                                                 <span class='icon-action icon-add' style='--color:#FF2a07'><ion-icon name='trash-outline'></ion-icon></span>
                                             </a>" . "</td>";
                             echo "</tr>";
                         }
                     ?>
-                    </tr>
                 </tbody>
             </table>
         </section>
@@ -102,7 +102,8 @@
 
     <!-- SCRIPTS -->
 
-    <script src="javascript/buttonFunctionary.js"></script>
+    <script src="javascript/buttonAction.js"></script>
+    <script src="javascript/confirmDelete.js"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@
 
         $id = $_GET['id'];
 
-        $sqlSelect = "SELECT * FROM usuarios WHERE id = $id";
+        $sqlSelect = "SELECT * FROM user WHERE id = $id";
 
         $result = $mysqli -> query($sqlSelect);
         
@@ -29,41 +29,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User</title>
+    <title>Edit User</title>
 </head>
 <body>
 <div class="box">
 
-    <a href="user.php">voltar</a>
+    <a href="user.php">Back</a>
 
-        <form action="saveEdit.php" method="POST">
+        <form action="userSave.php" method="POST">
 
             <label for="name" class="labelInput">
                 Nome completo
-                <input type="text" name="name" id="name" value="<?php echo $name ?>" required>
             </label>
+            
+            <input type="text" name="name" id="name" value="<?php echo $name ?>" required>
 
             <br>
 
             <label for="user" class="labelInput">
                 usuario
-                <input type="text" name="user" id="user" value="<?php echo $user ?>" required>
             </label>
+            
+            <input type="text" name="user" id="user" value="<?php echo $user ?>" required>
             
             <br>
 
             <label for="password" class="labelInput">
                 senha
-                <input type="password" name="password" id="password" value="<?php echo $password ?>" required>
             </label>
+            
+            <input type="password" name="password" id="password" value="<?php echo $password ?>" required>
 
             <input type="hidden" name="id" value="<?php echo $id; ?>">
 
             <input type="submit" name="update" id="update">
         </form>
-    </div>
+</div>
 </body>
 </html>

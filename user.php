@@ -25,7 +25,8 @@
 
     <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/functionary.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/user.css">
   
 </head>
 <body>
@@ -35,17 +36,16 @@
 
     <section class="menu">
         <article>
-            <a href="cadastre.php">
-                <span class="icon-add" style="--color:#ffa117">
-                    <span>
-                        <ion-icon name="person-add-outline"></ion-icon>
-                    </span>
-                    <!-- <span class="action">
-                        Register new user functionary
-                    </span> -->
+            <a href="userRegister.php">
+                <span class="icon-add register" style="--color:#ffa117">
+                    <ion-icon name="person-add-outline"></ion-icon>
+                    <p class="action">
+                            Register
+                    </p>
                 </span>
             </a>
         </article>
+
 
         <article>
 
@@ -62,38 +62,43 @@
         </article>
     </section>
     
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>User</th>
-                <th>Password</th>
-                <th>...</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <?php
-                while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<tr>";
-                    echo "<td>" . $user_data["id"] . "</td>";
-                    echo "<td>" . $user_data["name"] . "</td>";
-                    echo "<td>" . $user_data["user"] . "</td>";
-                    echo "<td>" . $user_data["password"] . "</td>";
-                    echo "<td>" . "<a href='edit.php?id=$user_data[id]'>editar</a>" . "</td>";
-                    echo "<td>" . "<a href='delete.php?id=$user_data[id]'>deletar</a>" . "</td>";
-                    echo "</tr>";
-                }
-            ?>
-
-        </tbody>
-    </table>
-
+    <section class="table-management">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    while($user_data = mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+                        echo "<th scope='row' class='destaque'>" . $user_data["id"] . "</th>";
+                        echo "<td>" . $user_data["name"] . "</td>";
+                        echo "<td>" . $user_data["user"] . "</td>";
+                        echo "<td>" . $user_data["password"] . "</td>";
+                        echo "<td>" . "<a href='userEdit.php?id=$user_data[id]'>
+                                            <span class='icon-action icon-add' style='--color:#3d4152'><ion-icon name='pencil-outline'></ion-icon></span>
+                                        </a>" 
+                                    . "<a href='userDelete.php?id=$user_data[id]' onClick='confirmDelete()' id='confirmDelete'>
+                                            <span class='icon-action icon-add' style='--color:#FF2a07'><ion-icon name='trash-outline'></ion-icon></span>
+                                        </a>" . "</td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+    </section>
 </main>
+
     <!-- SCRIPTS -->
 
     <script src="javascript/buttonFunctionary.js"></script>
+    <script src="javascript/confirmDelete.js"></script>
 
 </body>
 </html>
