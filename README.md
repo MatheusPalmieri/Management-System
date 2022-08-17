@@ -22,6 +22,8 @@
 ### Features
 
 - [x] Corrigir bug botão de navegação.
+- [ ] Corrigir bug de edição de funcionários.
+- [ ] Estilizar Formulários.
 - [ ] Permissões de usuários.
 - [ ] Menu de preferências do usuário.
 
