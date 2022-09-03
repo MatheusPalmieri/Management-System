@@ -1,5 +1,5 @@
 <?php 
-    include('navigation.php');
+    // include('navigation.php');
     include('connection.php');
     include('protect.php');
 

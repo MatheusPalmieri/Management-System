@@ -12,7 +12,7 @@
     
         $result = mysqli_query($mysqli, "INSERT INTO user (name, user, password) VALUES ('$name', '$user', '$password')");
 
-        header('Location: user.php');
+        header('Location: index.php');
     }
 
 ?>
@@ -25,34 +25,35 @@
 <body>
 <div class="box">
 
-    <a href="user.php">Back</a>
+    <a href="index.php">
+        Back
+    </a>
+    <form method="POST">
 
-        <form method="POST">
+        <label for="name" class="labelInput">
+            Nome completo
+        </label>
+        
+        <input type="text" name="name" id="name" required>
 
-            <label for="name" class="labelInput">
-                Nome completo
-            </label>
-            
-            <input type="text" name="name" id="name" required>
+        <br>
 
-            <br>
+        <label for="user" class="labelInput">
+            usuario
+        </label>
+        
+        <input type="text" name="user" id="user"required>
+        
+        <br>
 
-            <label for="user" class="labelInput">
-                usuario
-            </label>
-            
-            <input type="text" name="user" id="user"required>
-            
-            <br>
+        <label for="password" class="labelInput">
+            senha
+        </label>
+        
+        <input type="password" name="password" id="password" required>
 
-            <label for="password" class="labelInput">
-                senha
-            </label>
-            
-            <input type="password" name="password" id="password" required>
-
-            <input type="submit" name="submit" id="submit">
-        </form>
+        <input type="submit" name="submit" id="submit">
+    </form>
 </div>
 </body>
 </html>

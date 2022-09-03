@@ -18,10 +18,20 @@
     <div class="menu-toggle"></div>
       <ul class="list">
 
+        <!-- test -->
+        <li class="list-item" style="--color:#ffa117">
+          <a onclick="openPage('user', 'content')">
+            <span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="text">User</span>
+          </a>
+        </li>
+
         <!-- Home -->
 
         <li class="list-item" style="--color:#f44336">
-          <a href="dashboard.php">
+          <a href="index.php">
             <span class="icon">
               <ion-icon name="stats-chart-outline"></ion-icon>
             </span>
@@ -69,6 +79,7 @@
   <!-- SCRIPTS -->
 
   <!-- Navigation -->
+  <script src="javascript/content.js"></script>
   <script src="javascript/navigation.js"></script>
 
 </body>
