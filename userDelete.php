@@ -19,6 +19,6 @@
 
     }
 
-    header('Location: index.php');
+    header('Location: user.php');
 
 ?>

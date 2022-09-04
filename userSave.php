@@ -14,6 +14,6 @@
         $result = $mysqli -> query($sqlUpdate);
     }
 
-    header('Location: index.php');
+    header('Location: user.php');
 
 ?>

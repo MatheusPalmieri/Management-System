@@ -4,7 +4,7 @@ var menuToggle = document.querySelector('.menu-toggle')
 var navigation = document.querySelector('.navigation')
 var listItems = document.querySelectorAll('.list-item')
 var listLinks = document.querySelectorAll('.list-item a')
-var url = window.location.href.replace('http://localhost/management-system-php/', '')
+var url = window.location.href.replace('http://localhost/php/User-Management/', '')
 
 menuToggle.onclick = () => {
   navigation.classList.toggle('open')
@@ -17,7 +17,7 @@ function removeActive() {
 }
 
 switch(url){
-  case 'index.php':
+  case 'dashboard.php':
     removeActive
     listItems[0].classList.add('active')
     break
