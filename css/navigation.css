@@ -174,7 +174,7 @@ main {
   color: var(--color);
 }
 
-.navigation ul li:nth-child(4) {
+.navigation ul li:last-child {
   border-top: 1px solid rgba(0, 0, 0, 0.25);
   position: absolute;
   bottom: 0;

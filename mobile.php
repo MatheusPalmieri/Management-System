@@ -1,13 +1,13 @@
 <?php 
-    include('SYSnavigation.php');
-    include('SYSconnection.php');
-    include('SYSprotect.php');
+    include('navigation.php');
+    include('connection.php');
+    include('protect.php');
 
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM functionary WHERE id LIKE '%$data%' or nome LIKE '%$data%' or sobrenome LIKE '%$data%' ORDER BY id DESC";
+        $sql = "SELECT * FROM smart WHERE id LIKE '%$data%' or name LIKE '%$data%' or email LIKE '%$data%' ORDER BY id DESC";
     } else {
-        $sql = "SELECT * FROM functionary ORDER BY id DESC";
+        $sql = "SELECT * FROM smart ORDER BY id DESC";
     }
     
     $result = $mysqli -> query($sql);
@@ -18,7 +18,7 @@
 <head>
 
     <!-- Title Page -->
-    <title>Functionary</title>
+    <title>Mobile</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/programmer.png" type="image/x-icon">
@@ -33,7 +33,7 @@
 <body>
 
     <main>
-        <h1>Functionary's</h1>
+        <h1>Mobile's</h1>
 
         <section class="menu">
             <article>
@@ -68,9 +68,10 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Cargo</th>
-                        <th scope="col">Setor</th>
-                        <th scope="col">CPF</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">IMEI</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -79,12 +80,13 @@
                         while($user_data = mysqli_fetch_assoc($result)){
                             echo "<tr>";
                             echo "<th scope='row' class='destaque'>" . $user_data["id"] . "</th>";
-                            echo "<td>" . $user_data["name"] . " " . $user_data["lastName"] . "</td>";
-                            echo "<td>" . $user_data["office"] . "</td>";
-                            echo "<td>" . $user_data["sector"] . "</td>";
-                            echo "<td>" . $user_data["cpf"] . "</td>";
+                            echo "<td>" . $user_data["name"] . "</td>";
+                            echo "<td>" . $user_data["email"] . "</td>";
+                            echo "<td>" . $user_data["marca"] . "</td>";
+                            echo "<td>" . $user_data["modelo"] . "</td>";
+                            echo "<td>" . $user_data["imei"] . "</td>";
                             echo "<td>" . "<a href='functionaryEdit.php?id=$user_data[id]'>
-                                                <span class='icon-action icon-add' style='--color:#3d4152'><ion-icon name='pencil-outline'></ion-icon></span>
+                                                <span class='icon-action icon-add' style='--color:#24ddee'><ion-icon name='pencil-outline'></ion-icon></span>
                                             </a>" 
                                         . "<a onClick='confirmDelete()' href='functionaryDelete.php?id=$user_data[id]'>
                                                 <span class='icon-action icon-add' style='--color:#FF2a07'><ion-icon name='trash-outline'></ion-icon></span>

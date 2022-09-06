@@ -97,7 +97,7 @@
 
     <!-- SCRIPTS -->
 
-    <script src="javascript/buttonFunctionary.js"></script>
+    <script src="javascript/buttonAction.js"></script>
     <script src="javascript/confirmDelete.js"></script>
 
 </body>

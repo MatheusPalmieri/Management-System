@@ -1,9 +1,9 @@
 <?php 
 
-    include('protect.php');
+    include('SYSprotect.php');
 
     if(!empty($_GET['id'])){
-        include_once('connection.php');
+        include_once('SYSconnection.php');
 
         $id = $_GET['id'];
 
@@ -13,11 +13,10 @@
         
         if($result -> num_rows > 0){
             while($user_data = mysqli_fetch_assoc($result)){
-                $nome = $user_data['nome'];
-                $sobrenome = $user_data['sobrenome'];
-                $data_nascimento = $user_data['data_nascimento'];
-                $cargo = $user_data['cargo'];
-                $gestor = $user_data['gestor'];
+                $nome = $user_data['name'];
+                $sobrenome = $user_data['lastName'];
+                $cargo = $user_data['office'];
+                $setor = $user_data['sector'];
                 $cpf = $user_data['cpf'];
             }
         } else {
@@ -66,18 +65,10 @@
             <br>
 
             <label for="password" class="labelInput">
-                Gestor
+                Setor
             </label>
             
-            <input type="text" name="password" id="password" value="<?php echo $gestor ?>" required>
-
-            <br>
-
-            <label for="password" class="labelInput">
-                Data de Nascimento
-            </label>
-            
-            <input type="text" name="password" id="password" value="<?php echo $data_nascimento ?>" required>
+            <input type="text" name="password" id="password" value="<?php echo $setor ?>" required>
 
             <br>
 

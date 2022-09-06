@@ -1,19 +1,18 @@
 <?php
 
-    include('protect.php');
+    include('SYSprotect.php');
 
     if(isset($_POST['submit'])){
     
-        include_once('connection.php');
+        include_once('SYSconnection.php');
 
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
         $cargo = $_POST['cargo'];
-        $gestor = $_POST['gestor'];
-        $data_nascimento = $_POST['data_nascimento'];
+        $setor = $_POST['setor'];
         $cpf = $_POST['cpf'];
     
-        $result = mysqli_query($mysqli, "INSERT INTO functionary(nome, sobrenome, cargo, gestor, data_nascimento, cpf) VALUES ('$nome', '$sobrenome', '$cargo', '$gestor', '$data_nascimento', '$cpf')");
+        $result = mysqli_query($mysqli, "INSERT INTO functionary(name, lastName, office, sector, cpf) VALUES ('$nome', '$sobrenome', '$cargo', '$setor', '$cpf')");
 
         header('Location: functionary.php');
     }
@@ -56,20 +55,12 @@
             
             <br>
 
-            <label for="gestor" class="labelInput">
-                Gestor
+            <label for="setor" class="labelInput">
+                Setor
             </label>
                 
-            <input type="text" name="gestor" id="gestor" required>
+            <input type="text" name="setor" id="setor" required>
             
-            <br>
-
-            <label for="data_nascimento" class="labelInput">
-                Data Nascimento
-            </label>
-                
-            <input type="date" name="data_nascimento" id="data_nascimento" required>
-
             <br>
 
             <label for="cpf" class="labelInput">

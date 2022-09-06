@@ -1,63 +1,78 @@
 <?php
-    include('connection.php');
+    include('SYSconnection.php');
+    include('SYSprotect.php');
+    include('SYSnavigation.php');
 
-    if(isset($_POST['user']) || isset($_POST['senha'])) {
-
-        if(strlen($_POST['user']) == 0) {
-            echo "Preencha seu usuário";
-        } else if ($_POST['password'] == 0){
-            echo "Preencha sua senha";
-        } else {
-            $user = $mysqli -> real_escape_string($_POST['user']);
-            $password = $mysqli -> real_escape_string($_POST['password']);
-
-            $sql_code = "SELECT * FROM user WHERE user = '$user' AND password = '$password'";
-            $slq_query = $mysqli -> query($sql_code) or die("Falha na execução do código SQL: " . $mysqli -> error);
-
-            $quantity = $slq_query -> num_rows;
-        
-            if($quantity == 1) {
-                $user = $slq_query -> fetch_assoc();
-
-                if(!isset($_SESSION)) {
-                    session_start();
-                }
-
-                $_SESSION['id'] = $user['id'];
-
-                header("Location: dashboard.php");
-            } else {
-                echo "Falha ao logar! E-mail ou senha incorretos.";
-            }
-        }
-    }
+    // $sqlFunctionary = "SELECT * FROM functionary";
+    // $sqlMobile = "SELECT * FROM mobile";
+    // $sqlUser = "SELECT * FROM user";
+                        
+    // if($result = mysqli_query($mysqli, $sql)) {
+    //     $rowsQuantity = mysqli_num_rows($result);
+    // }
+    $rowsQuantityFunctionary = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM functionary"));
+    $rowsQuantityMobile = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM smart"));
+    $rowsQuantityUser = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM user"));
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+
+    <!-- Title Page -->
+    <title>Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/programmer.png" type="image/x-icon">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
-    
-    <form action="" method="POST">
+    <main>
+        <h1>Dashboard</h1>
 
-        <label for="user">
-            User
-            <input type="text" name="user">
-        </label>
+        <section class="container">
+            <article class="card" style="--color:#f44336">
+                <div>
+                    <h2>functionary's</h2>
+                </div>
+                <div>
+                    <?php
+                        echo "<span>" . $rowsQuantityFunctionary . "</span>";
+                    ?>
+                </div>
+            </article>
 
-        <label for="password">
-            Password
-            <input type="password" name="password">
-        </label>
-
-        <button type="submit">Login</button>
-
-    </form>
-
+            <article class="card" style="--color:#25dfff">
+                <div>
+                    <h2>Mobile</h2>
+                </div>
+                <div>
+                    <?php
+                        echo "<span>" . $rowsQuantityMobile . "</span>";
+                    ?>
+                </div>
+            </article>
+            
+            <article class="card" style="--color:#b145e9">
+                <div>
+                    <h2>Users</h2>
+                </div>
+                <div>
+                    <?php
+                        // $sql = "SELECT * FROM user";
+                        
+                        // if($result = mysqli_query($mysqli, $sql)) {
+                        //     $rowsQuantity = mysqli_num_rows($result);
+                        // }
+                        
+                        echo "<span>" . $rowsQuantityUser . "</span>";
+                    ?>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

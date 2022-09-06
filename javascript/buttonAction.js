@@ -1,15 +1,23 @@
 'use strict';
 
-var resetURL = window.location.href.replace('http://localhost/php/User-Management/', '')
+var resetURL = window.location.pathname.replace('/Management-System/', '')
 var resetButton = document.getElementById('reset')
 var search = document.getElementById('search')
+
+// console.log(resetURL)
 
 if(resetURL === 'functionary.php' || resetURL === 'functionary.php?search=' + search.value){
     if(resetURL !== 'functionary.php' || resetURL === 'functionary.php?search='){
         resetSearch()
+        console.log('hit1')
     }
-} else if (resetURL !== 'user.php' || resetURL === 'user.php?search=') {
+    console.log('hit2')
+} else if (resetURL === 'user.php' || resetURL === 'user.php?search=') {
     resetSearch()
+    console.log('hit3')
+} else if (resetURL === 'mobile.php' || resetURL === 'mobile.php?search=') {
+    resetSearch()
+    console.log('hit4')
 } else {
         resetButton.style = 'display: none;'
 }
@@ -23,21 +31,24 @@ search.addEventListener("keydown", (event) => {
 function searchData() {
     if(window.location = 'functionary.php') {
         window.location = 'functionary.php?search=' + search.value
-    } else {
+    } else if (window.location = 'user.php') {
         window.location = 'user.php?search=' + search.value
+    } else {
+        window.location = 'mobile.php?search=' + search.value
     }
 }
 
 function resetSearch() {
-    resetButton.style = 'display: flex;'
+    resetButton.style.display = 'none'
 }
 
 function searchClearData() {
-    console.log(window.location)
     if(window.location = 'functionary.php?search=') {
         window.location = 'functionary.php'
-    } else {
+    } else if (window.location = 'user.php?search=') {
         window.location = 'user.php'
+    } else {
+        window.location = 'mobile.php'
     }
     // window.location = 'functionary.php'
     // window.location = 'user.php'
