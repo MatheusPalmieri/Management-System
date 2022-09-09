@@ -1,10 +1,10 @@
 <?php 
 
-    include('protect.php');
+    include('SYSprotect.php');
 
     if(!empty($_GET['id'])){
 
-        include_once('connection.php');
+        include_once('SYSconnection.php');
 
         $id = $_GET['id'];
 

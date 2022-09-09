@@ -5,13 +5,13 @@
 
     if(isset($_POST['update'])){
         $id = $_POST['id'];
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $cargo = $_POST['cargo'];
-        $setor = $_POST['setor'];
+        $name = $_POST['name'];
+        $lastName = $_POST['lastName'];
+        $office = $_POST['office'];
+        $sector = $_POST['sector'];
         $cpf = $_POST['cpf'];
 
-        $sqlUpdate = "UPDATE functionary SET nome='$nome', sobrenome='$sobrenome', cargo='$cargo', setor='$setor', cpf='$cpf' WHERE {id='$id'}";
+        $sqlUpdate = "UPDATE functionary SET name='$name', lastName='$lastName', office='$office', sector='$sector', cpf='$cpf' WHERE {id='$id'}";
 
         $result = $mysqli -> query($sqlUpdate);
     }

@@ -6,13 +6,13 @@
     
         include_once('SYSconnection.php');
 
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
-        $cargo = $_POST['cargo'];
-        $setor = $_POST['setor'];
+        $name = $_POST['name'];
+        $lastName = $_POST['lastName'];
+        $office = $_POST['office'];
+        $sector = $_POST['sector'];
         $cpf = $_POST['cpf'];
     
-        $result = mysqli_query($mysqli, "INSERT INTO functionary(name, lastName, office, sector, cpf) VALUES ('$nome', '$sobrenome', '$cargo', '$setor', '$cpf')");
+        $result = mysqli_query($mysqli, "INSERT INTO functionary(name, lastName, office, sector, cpf) VALUES ('$name', '$lastName', '$office', '$sector', '$cpf')");
 
         header('Location: functionary.php');
     }
@@ -31,7 +31,7 @@
 
         <form method="POST">
 
-            <label for="nome" class="labelInput">
+            <label for="name" class="labelInput">
                 Primeiro Nome
             </label>
                 
@@ -39,11 +39,11 @@
 
             <br>
 
-            <label for="sobrenome" class="labelInput">
+            <label for="lastName" class="labelInput">
                 Sobrenome
             </label>
                 
-            <input type="text" name="sobrenome" id="sobrenome" required>
+            <input type="text" name="lastName" id="sobrenome" required>
             
             <br>
 
@@ -51,7 +51,7 @@
                 Cargo
             </label>
                 
-            <input type="text" name="cargo" id="cargo" required>
+            <input type="text" name="office" id="cargo" required>
             
             <br>
 
@@ -59,7 +59,7 @@
                 Setor
             </label>
                 
-            <input type="text" name="setor" id="setor" required>
+            <input type="text" name="sector" id="setor" required>
             
             <br>
 

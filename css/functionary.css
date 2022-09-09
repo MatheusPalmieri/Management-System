@@ -1,0 +1,28 @@
+.registerPainel {
+    position:absolute; 
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 250px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.buttonRegister {
+    border: none;
+    outline: none;
+    background: #FF2a07;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.submitRegisterAdd {
+    background-color: #ffa117;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

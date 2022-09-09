@@ -53,3 +53,7 @@ function searchClearData() {
     // window.location = 'functionary.php'
     // window.location = 'user.php'
 }
+
+function confirmDelete() {
+    if(!confirm('Deseja excluir?'))document.getElementById('confirmDelete').href = ''
+}

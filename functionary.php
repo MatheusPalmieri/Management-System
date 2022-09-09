@@ -5,7 +5,7 @@
 
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM functionary WHERE id LIKE '%$data%' or nome LIKE '%$data%' or sobrenome LIKE '%$data%' ORDER BY id DESC";
+        $sql = "SELECT * FROM functionary WHERE id LIKE '%$data%' or name LIKE '%$data%' or lastName LIKE '%$data%' ORDER BY id DESC";
     } else {
         $sql = "SELECT * FROM functionary ORDER BY id DESC";
     }
@@ -18,7 +18,7 @@
 <head>
 
     <!-- Title Page -->
-    <title>Functionary</title>
+    <title>Funcionários</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/programmer.png" type="image/x-icon">
@@ -37,12 +37,11 @@
 
         <section class="menu">
             <article>
-                <a href="functionaryRegister.php">
+                <!-- <a href="functionaryRegister.php"> -->
+                <a id="functionaryRegister">
                     <span class="icon-add register" style="--color:#ffa117">
                         <ion-icon name="person-add-outline"></ion-icon>
-                        <p class="action">
-                            Register
-                        </p>
+                        <p class="action">Register</p>
                     </span>
                 </a>
             </article>
@@ -96,12 +95,60 @@
             </table>
         </section>
 
+        <!-- Register -->
+
+        <section id="registerMenu" class="func">
+
+            <button class="buttonRegister"> x </button>
+
+            <form method="POST">
+
+                <label for="name" class="labelInput">Primeiro Nome</label>
+                <input type="text" name="name" id="nome" required>
+
+                <br>
+
+                <label for="lastName" class="labelInput">Sobrenome</label>
+                <input type="text" name="lastName" id="sobrenome" required>
+
+                <br>
+
+                <label for="office" class="labelInput">Cargo</label>
+                <input type="text" name="office" id="cargo" required>
+
+                <br>
+
+                <label for="sector" class="labelInput">Setor</label>
+                <input type="text" name="sector" id="setor" required>
+
+                <br>
+
+                <label for="cpf" class="labelInput">CPF</label>
+                <input type="text" name="cpf" id="cpf" required>
+
+                <input type="submit" name="submit" id="submit" class="submitRegisterAdd">
+
+            </form>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <!-- SCRIPTS -->
 
     <script src="javascript/buttonAction.js"></script>
-    <script src="javascript/confirmDelete.js"></script>
 
 </body>
 </html>

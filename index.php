@@ -11,7 +11,7 @@
     //     $rowsQuantity = mysqli_num_rows($result);
     // }
     $rowsQuantityFunctionary = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM functionary"));
-    $rowsQuantityMobile = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM smart"));
+    $rowsQuantityMobile = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM mobile"));
     $rowsQuantityUser = mysqli_num_rows(mysqli_query($mysqli, "SELECT * FROM user"));
 ?>
 
@@ -62,12 +62,6 @@
                 </div>
                 <div>
                     <?php
-                        // $sql = "SELECT * FROM user";
-                        
-                        // if($result = mysqli_query($mysqli, $sql)) {
-                        //     $rowsQuantity = mysqli_num_rows($result);
-                        // }
-                        
                         echo "<span>" . $rowsQuantityUser . "</span>";
                     ?>
                 </div>
