@@ -32,46 +32,11 @@
         <!-- Functionary -->
 
         <li class="list-item" style="--color:#ffa117">
-          <a href="functionary.php">
+          <a href="inventory.php">
             <span class="icon">
-              <ion-icon name="people-outline"></ion-icon>
-              <!-- <ion-icon name="person-add-outline"></ion-icon> -->
+              <ion-icon name="file-tray-stacked-outline"></ion-icon>
             </span>
-            <span class="text" lang="pt-br">Funcionários</span>
-          </a>
-        </li>
-
-        <!-- Session Test -->
-        <!-- Mobile -->
-
-        <li class="list-item" style="--color:#24adff">
-          <a href="mobile.php">
-            <span class="icon">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </span>
-            <span class="text" lang="en">Mobile</span>
-          </a>
-        </li>
-
-        <!-- Tablet -->
-
-        <li class="list-item" style="--color:#532afc">
-          <a href="tablet.php">
-            <span class="icon">
-              <ion-icon name="tablet-portrait-outline"></ion-icon>
-            </span>
-            <span class="text" lang="en">Tablet</span>
-          </a>
-        </li>
-
-        <!-- Desktops -->
-
-        <li class="list-item" style="--color:#08fad3">
-          <a href="desktop.php">
-            <span class="icon">
-              <ion-icon name="desktop-outline"></ion-icon>
-            </span>
-            <span class="text" lang="en">Desktops</span>
+            <span class="text" lang="pt-br">Inventário</span>
           </a>
         </li>
 

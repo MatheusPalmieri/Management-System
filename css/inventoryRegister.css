@@ -1,0 +1,17 @@
+.register {
+    color: #fff;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dados-telefonia {
+    display: none;
+}
+
+.text {
+    
+}

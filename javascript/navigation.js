@@ -3,7 +3,7 @@
 var menuToggle = document.querySelector('.menu-toggle')
 var navigation = document.querySelector('.navigation')
 var listItems = document.querySelectorAll('.list-item')
-var url = window.location.pathname.replace('/Management-System/', '')
+var url = window.location.pathname.toLowerCase().replace('/inventory.com/', '')
 
 menuToggle.onclick = () => {
   navigation.classList.toggle('open')
@@ -24,19 +24,19 @@ switch(url){
   case 'index.php':
     removeActive(0)
     break
-  case 'functionary.php':
+  case 'inventory.php':
     removeActive(1)
     break
-  case 'mobile.php':
-    removeActive(2)
+  case 'inventoryregister.php':
+    removeActive(1)
     break
-  case 'tablet.php':
-    removeActive(3)
-    break
-  case 'desktop.php':
-    removeActive(4)
+  case 'inventoryedit.php':
+    removeActive(1)
     break
   case 'user.php':
-    removeActive(5)
+    removeActive(2)
     break
+  default:
+    console.log('error')
+    console.error()
 }

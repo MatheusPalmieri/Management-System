@@ -16,6 +16,6 @@
         $result = $mysqli -> query($sqlUpdate);
     }
 
-    header('Location: functionary.php');
+    header('Location: inventory.php');
 
 ?>

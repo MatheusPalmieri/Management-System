@@ -1,7 +1,7 @@
 'use strict';
 
 const openPage = (index, target) => {
-    var url = './../management-system-php/' + index + '.php'
+    var url = './../inventory.com/' + index + '.php'
     var xml = new XMLHttpRequest()
 
     xml.onreadystatechange = () => {

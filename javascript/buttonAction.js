@@ -1,26 +1,27 @@
 'use strict';
 
-var resetURL = window.location.pathname.replace('/Management-System/', '')
+var url = window.location.pathname.replace('/inventory.com/', '')
 var resetButton = document.getElementById('reset')
 var search = document.getElementById('search')
 
-// console.log(resetURL)
-
-if(resetURL === 'functionary.php' || resetURL === 'functionary.php?search=' + search.value){
-    if(resetURL !== 'functionary.php' || resetURL === 'functionary.php?search='){
-        resetSearch()
-        console.log('hit1')
-    }
-    console.log('hit2')
-} else if (resetURL === 'user.php' || resetURL === 'user.php?search=') {
+if(url === 'inventory.php?search=' + search.value){
+    console.log('search inv')
     resetSearch()
-    console.log('hit3')
-} else if (resetURL === 'mobile.php' || resetURL === 'mobile.php?search=') {
+} else if (url == 'user.php?search= ' + search.value) {
     resetSearch()
-    console.log('hit4')
+    console.log('search user' + search.value)
 } else {
-        resetButton.style = 'display: none;'
+    console.log('saiu')
+    resetButton.style = 'display: none;'
 }
+
+// if(url === 'inventory.php' || url === 'inventory.php?search=' + search.value){
+//     if(url !== 'inventory.php' || url === 'inventory.php?search='){
+//         resetSearch()
+//     }
+// } else if (url !== 'user.php' || url === 'user.php?search=') {
+//     resetSearch()
+// }
 
 search.addEventListener("keydown", (event) => {
     if(event.key === "Enter") {
@@ -29,28 +30,25 @@ search.addEventListener("keydown", (event) => {
 })
 
 function searchData() {
-    if(window.location = 'functionary.php') {
-        window.location = 'functionary.php?search=' + search.value
-    } else if (window.location = 'user.php') {
-        window.location = 'user.php?search=' + search.value
+    if(window.location = 'inventory.php') {
+        window.location = 'inventory.php?search=' + search.value
     } else {
-        window.location = 'mobile.php?search=' + search.value
+        window.location = 'user.php?search=' + search.value
     }
 }
 
 function resetSearch() {
-    resetButton.style.display = 'none'
+    console.log('reset')
+    resetButton.style.display = 'block'
 }
 
 function searchClearData() {
-    if(window.location = 'functionary.php?search=') {
-        window.location = 'functionary.php'
-    } else if (window.location = 'user.php?search=') {
-        window.location = 'user.php'
+    if(window.location = 'inventory.php?search=') {
+        window.location = 'inventory.php'
     } else {
-        window.location = 'mobile.php'
+        window.location = 'user.php'
     }
-    // window.location = 'functionary.php'
+    // window.location = 'inventory.php'
     // window.location = 'user.php'
 }
 

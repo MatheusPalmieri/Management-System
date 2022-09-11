@@ -1,7 +1,7 @@
 <?php 
-    include('navigation.php');
-    include('connection.php');
-    include('protect.php');
+    include('SYSnavigation.php');
+    include('SYSconnection.php');
+    include('SYSprotect.php');
 
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
@@ -98,7 +98,6 @@
     <!-- SCRIPTS -->
 
     <script src="javascript/buttonAction.js"></script>
-    <script src="javascript/confirmDelete.js"></script>
 
 </body>
 </html>
