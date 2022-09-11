@@ -1,10 +1,10 @@
 <!-- Título -->
 
-<h1 align="center">User Management</h1>
+<h1 align="center">Inventory</h1>
 
 <!-- Descrição -->
 
-<p align="center">Projeto para Gerencimento de Funcionários, com usuários com permissões definida pelo administrador.</p>
+<p align="center">Sistema de inventário, desenvolvido para empresa FG Empreendimentos.</p>
 
 <!-- Súmario -->
 
@@ -26,6 +26,7 @@
 - [ ] Estilizar Formulários.
 - [ ] Permissões de usuários.
 - [ ] Menu de preferências do usuário.
+- [ ] Envio de contrato por e-mail e captura de assinaturas.
 
 ---
 
@@ -53,5 +54,5 @@ Create for <b>`Matheus Palmieri`</b>👨‍💻
 <br>
 <br>
 
-<p align="center">🎉Projeto User Management Finalizado🚀</p>
+<p align="center">🎉Projeto Inventory em Desenvolvimento🚀</p>
 
