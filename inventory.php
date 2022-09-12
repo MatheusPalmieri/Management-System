@@ -66,26 +66,26 @@
                         <th scope="col">ID</th>
                         <th scope="col">tipoDeEquipamento</th>
                         <th scope="col">nomenclatura</th>
-                        <th scope="col">marca</th>
-                        <th scope="col">modelo</th>
-                        <th scope="col">Serial Number</th>
-                        <th scope="col">Processador</th>
-                        <th scope="col">Memória</th>
-                        <th scope="col">S.O.</th>
+                        <!-- <th scope="col">marca</th> -->
+                        <!-- <th scope="col">modelo</th> -->
+                        <!-- <th scope="col">Serial Number</th> -->
+                        <!-- <th scope="col">Processador</th> -->
+                        <!-- <th scope="col">Memória</th> -->
+                        <!-- <th scope="col">S.O.</th> -->
                         <th scope="col">Status</th>
-                        <th scope="col">Fornecedor</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">Nº Nota Fiscal</th>
-                        <th scope="col">Data Fiscal</th>
-                        <th scope="col">Data Garantia</th>
-                        <th scope="col">Valor</th>
+                        <!-- <th scope="col">Fornecedor</th> -->
+                        <!-- <th scope="col">CNPJ</th> -->
+                        <!-- <th scope="col">Nº Nota Fiscal</th> -->
+                        <!-- <th scope="col">Data Fiscal</th> -->
+                        <!-- <th scope="col">Data Garantia</th> -->
+                        <!-- <th scope="col">Valor</th> -->
                         <th scope="col">Nome</th>
                         <th scope="col">C.P.F.</th>
                         <th scope="col">Cargo</th>
                         <th scope="col">Setor</th>
-                        <th scope="col">Nº Linha</th>
-                        <th scope="col">Plano</th>
-                        <th scope="col">Operadora</th>
+                        <!-- <th scope="col">Nº Linha</th> -->
+                        <!-- <th scope="col">Plano</th> -->
+                        <!-- <th scope="col">Operadora</th> -->
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -97,31 +97,31 @@
 
                             echo "<td>" . $user_data["tipoDeEquipamento"] . "</td>";
                             echo "<td>" . $user_data["nomenclatura"] . "</td>";
-                            echo "<td>" . $user_data["marca"] . "</td>";
-                            echo "<td>" . $user_data["modelo"] . "</td>";
-                            echo "<td>" . $user_data["serialNumberTAG"] . "</td>";
-                            echo "<td>" . $user_data["processador"] . "</td>";
-                            echo "<td>" . $user_data["memoria"] . "</td>";
-                            echo "<td>" . $user_data["sistemaOperacional"] . "</td>";
+                            // echo "<td>" . $user_data["marca"] . "</td>";
+                            // echo "<td>" . $user_data["modelo"] . "</td>";
+                            // echo "<td>" . $user_data["serialNumberTAG"] . "</td>";
+                            // echo "<td>" . $user_data["processador"] . "</td>";
+                            // echo "<td>" . $user_data["memoria"] . "</td>";
+                            // echo "<td>" . $user_data["sistemaOperacional"] . "</td>";
                             echo "<td>" . $user_data["status"] . "</td>";
-                            echo "<td>" . $user_data["fornecedor"] . "</td>";
-                            echo "<td>" . $user_data["cnpj"] . "</td>";
-                            echo "<td>" . $user_data["notaFiscal"] . "</td>";
-                            echo "<td>" . $user_data["dataCompra"] . "</td>";
-                            echo "<td>" . $user_data["dataGarantia"] . "</td>";
-                            echo "<td>" . $user_data["valor"] . "</td>";
+                            // echo "<td>" . $user_data["fornecedor"] . "</td>";
+                            // echo "<td>" . $user_data["cnpj"] . "</td>";
+                            // echo "<td>" . $user_data["notaFiscal"] . "</td>";
+                            // echo "<td>" . $user_data["dataCompra"] . "</td>";
+                            // echo "<td>" . $user_data["dataGarantia"] . "</td>";
+                            // echo "<td>" . $user_data["valor"] . "</td>";
                             echo "<td>" . $user_data["nome"] . "</td>";
                             echo "<td>" . $user_data["cpf"] . "</td>";
                             echo "<td>" . $user_data["cargo"] . "</td>";
                             echo "<td>" . $user_data["setor"] . "</td>";
-                            echo "<td>" . $user_data["numeroLinha"] . "</td>";
-                            echo "<td>" . $user_data["plano"] . "</td>";
-                            echo "<td>" . $user_data["operadora"] . "</td>";
+                            // echo "<td>" . $user_data["numeroLinha"] . "</td>";
+                            // echo "<td>" . $user_data["plano"] . "</td>";
+                            // echo "<td>" . $user_data["operadora"] . "</td>";
 
-                            echo "<td>" . "<a href='functionaryEdit.php?id=$user_data[id]'>
+                            echo "<td>" . "<a href='inventoryEdit.php?id=$user_data[id]'>
                                                 <span class='icon-action icon-add' style='--color:#3d4152'><ion-icon name='pencil-outline'></ion-icon></span>
                                             </a>" 
-                                        . "<a onClick='confirmDelete()' href='functionaryDelete.php?id=$user_data[id]'>
+                                        . "<a onClick='confirmDelete()' href='inventoryDelete.php?id=$user_data[id]'>
                                                 <span class='icon-action icon-add' style='--color:#FF2a07'><ion-icon name='trash-outline'></ion-icon></span>
                                             </a>" . "</td>";
                             echo "</tr>";

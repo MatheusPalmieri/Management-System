@@ -8,17 +8,17 @@
 
         $id = $_GET['id'];
 
-        $sqlSelect = "SELECT * FROM functionary WHERE id = $id";
+        $sqlSelect = "SELECT * FROM inventory WHERE id = $id";
 
         $result = $mysqli -> query($sqlSelect);
         
         if($result -> num_rows > 0){
-            $sqlDelete = "DELETE FROM functionary WHERE id = $id";
+            $sqlDelete = "DELETE FROM inventory WHERE id = $id";
             $result = $mysqli -> query($sqlDelete);
         }
 
     }
 
-    header('Location: functionary.php');
+    header('Location: inventory.php');
 
 ?>

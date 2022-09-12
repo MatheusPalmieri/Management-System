@@ -7,7 +7,7 @@
 
         $id = $_GET['id'];
 
-        $sqlSelect = "SELECT * FROM functionary WHERE id = $id";
+        $sqlSelect = "SELECT * FROM inventory WHERE id = $id";
 
         $result = $mysqli -> query($sqlSelect);
         
@@ -20,23 +20,23 @@
                 $cpf = $user_data['cpf'];
             }
         } else {
-            header('Location: functionary.php');
+            header('Location: inventory.php');
         }
     } else {
-        header('Location: functionary.php');
+        header('Location: inventory.php');
     }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <title>Edit Functionary</title>
 </head>
 <body>
 <div class="box">
 
-    <a href="functionary.php">Back</a>
+    <a href="inventory.php">Back</a>
 
         <form action="functionarySave.php" method="POST">
 
